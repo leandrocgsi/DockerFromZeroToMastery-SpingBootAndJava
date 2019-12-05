@@ -29,8 +29,8 @@ public class SwaggerConfig {
 
 	private ApiInfo apiInfo() {
 		return new ApiInfo(
-				"Docker do Zero à Maestria - Contêinerização Desmistificada!", 
-				"Docker do Zero à Maestria - Contêinerização Desmistificada!",
+				"Docker from Zero to Mastery - Demystified Containerization!", 
+				"Docker from Zero to Mastery - Demystified Containerization!",
 				"v1",
 				"Terms Of Service Url",
 				new Contact("Leandro Costa", "www.erudio.com.br", "your_email@gmail.com"),
