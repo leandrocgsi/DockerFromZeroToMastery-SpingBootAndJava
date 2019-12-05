@@ -1,1 +1,1 @@
-# DockerizingJavaApp
+# Docker from Zero to Mastery
