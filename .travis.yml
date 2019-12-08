@@ -15,7 +15,8 @@ before_deploy:
 deploy:
   provider: script
   script:
-    docker push leandrocgsi/docker-from-zero-to-mastery-java;
+    docker tag docker-from-zero-to-mastery-java:latest "$DOCKER_USERNAME"/docker-from-zero-to-mastery-java:$TRAVIS_JOB_ID
+    docker push "$DOCKER_USERNAME"/docker-from-zero-to-mastery-java;
   on:
     brach: master
 notifications:
