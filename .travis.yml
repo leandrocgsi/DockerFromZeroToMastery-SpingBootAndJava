@@ -11,12 +11,14 @@ before_install:
 script:
   - docker-compose build
 before_deploy:
-  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+  - echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
 deploy:
   provider: script
   script:
     docker tag docker-from-zero-to-mastery-java:latest $DOCKER_USERNAME/docker-from-zero-to-mastery-java:$TRAVIS_JOB_ID;
-    docker push $DOCKER_USERNAME/docker-from-zero-to-mastery-java;
+    docker tag docker-from-zero-to-mastery-java:latest $DOCKER_USERNAME/docker-from-zero-to-mastery-java:latest;
+    docker push $DOCKER_USERNAME/docker-from-zero-to-mastery-java:$TRAVIS_JOB_ID;
+    docker push $DOCKER_USERNAME/docker-from-zero-to-mastery-java:latest;
   on:
     brach: master
 notifications:
